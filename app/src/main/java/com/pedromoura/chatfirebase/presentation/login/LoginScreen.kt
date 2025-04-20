@@ -3,6 +3,7 @@ package com.pedromoura.chatfirebase.presentation.login
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -50,7 +52,7 @@ fun LoginScreen(
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(bottom = 50.dp)
         )
         OutlinedTextField(
@@ -60,14 +62,14 @@ fun LoginScreen(
                 Text(
                     text = "Usuário",
                     modifier = Modifier
-                        .fillMaxSize()
                         .padding(bottom = 8.dp),
                     textAlign = TextAlign.Start
                 )
             },
+            visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(bottom = 16.dp)
         )
         Button(
